@@ -22,7 +22,14 @@ pipeline {
         stage('Generate Jar') {
             steps {
                 echo 'Generating runnable jar' 
-                bat 'mvn package'
+                bat 'mvn install'
+            }
+        }
+        
+        stage('Static code analysis with sonar') {
+            steps {
+                echo 'Started SonarQube Analysis' 
+                bat 'mvn sonar:sonar -Dsonar.login=2ea567da5b4cca42385a1ace7ac1154ca598b9d3'
             }
         }
     }
