@@ -29,12 +29,9 @@ pipeline {
         stage('Static code analysis with sonar') {
             steps {
                 echo 'Started SonarQube Analysis' 
-                script{
-                	withSonarQubeEnv('sonarQube'){
-                		 bat 'mvn sonar:sonar'
-                	}
-                }
-               
+            	withSonarQubeEnv('sonarQube'){
+            		 bat 'mvn sonar:sonar -Dsonar.login=ff14baf9ae260180cbc3ed6696d768607d70aa71'
+            	}
             }
         }
     }
