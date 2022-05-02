@@ -7,12 +7,6 @@ pipeline {
                 bat 'mvn clean'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing the code' 
-                bat 'mvn test'
-            }
-        }
         stage('compile') {
             steps {
                 echo 'compiling the code' 
@@ -30,7 +24,7 @@ pipeline {
             steps {
                 echo 'Started SonarQube Analysis' 
             	withSonarQubeEnv('sonarQube'){
-            		 bat 'mvn sonar:sonar -Dsonar.login=ff14baf9ae260180cbc3ed6696d768607d70aa71'
+            		 bat 'mvn sonar:sonar'
             	}
             }
         }
