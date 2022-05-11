@@ -9,6 +9,12 @@ public class Country {
 	private String address;
 	private String name;
 	
+	public Country(int id, String name, String address) {
+		
+		this.id = id ; 
+		this.name = name;
+		this.address = address;
+	}
 	public int getId() {
 		return id;
 	}

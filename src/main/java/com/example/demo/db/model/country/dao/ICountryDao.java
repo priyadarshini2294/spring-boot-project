@@ -10,7 +10,9 @@ import com.example.demo.db.model.country.pojo.Country;
 @Repository
 public interface ICountryDao {
 	
-    long insert(Country country) throws Exception;
+    long insert(Country country) ;
 
-    List<Map<String, Object>> getAllCountries() throws Exception;
+    List<Map<String, Object>> getAllCountries();
+    
+    Map<String, Object> getCountryData(long id);
 }
